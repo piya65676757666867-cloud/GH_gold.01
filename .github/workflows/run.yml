@@ -1,0 +1,20 @@
+name: Run from n8n
+on:
+  repository_dispatch:
+    types: [run-python-script]
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run script
+        run: python "gold_news_rss (สมบูรณ์).py"

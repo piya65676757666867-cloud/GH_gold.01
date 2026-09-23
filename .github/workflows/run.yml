@@ -16,5 +16,8 @@ jobs:
         with:
           python-version: '3.10'
 
+      - name: Install dependencies
+        run: pip install feedparser requests
+
       - name: Run script
         run: python "gold_news_rss (สมบูรณ์).py"
